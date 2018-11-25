@@ -1,0 +1,41 @@
+
+
+<table class="table table-striped">
+  <thead>
+    <tr>
+      <th>ISBN</th>
+      <th>KİTAP ADI</th>
+      <th>YAZAR ADI</th>
+      <th>YAYIN EVİ</th>
+      <th>SAYFA SAYISI</th>
+      <th>BASIM TARİHİ</th>
+      <th>GUNCELLE</th>
+      <th>SİL</th>
+    </tr>
+  </thead>
+  <tbody>
+    {{#each model as |kitaps|}}
+    <tr>
+      <td>{{kitaps.id}}</td>
+      <td>{{kitaps.kitapAdi}}</td>
+      <td>
+
+        {{#each kitaps.yazarAdi as |yzr|}}
+        <ul>
+          <li>
+            {{yzr.yazarAdi}}
+          </li>
+        </ul>
+        {{/each}}
+
+      </td>
+      <td>{{kitaps.yayinEvi}}</td>
+      <td>{{kitaps.sayfaSayisi}}</td>
+      <td>{{kitaps.basimTarihi}}</td>
+      <td> <button type="button" class="btn btn-info" {{action "updateBook" kitaps.id}}>Update</button>  </td>
+<td> <button type="button" class="btn btn-danger" {{action "deleteBook" kitaps.id}}>Delete</button>  </td>
+    </tr>
+    {{/each}}
+
+  </tbody>
+</table>

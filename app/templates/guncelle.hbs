@@ -1,0 +1,25 @@
+<div class="col-md-2">{{sorgu}}</div>
+ <div class="col-md-8"><br/>
+<form class="navbar-form navbar-left">
+  <div class="form-group">
+    Isbn:{{input class="form-control" value=model.id placeholder="isbn"}}<br/>
+    Kitap Adı:{{input class="form-control" value=model.kitapAdi placeholder="Kitap Adı"}}<br/>
+    Yayın Evi:{{input class="form-control" value=model.yayinEvi placeholder="Yayın Evi"}}<br/>
+    Sayfa Sayısı:{{input class="form-control" value=model.sayfaSayisi placeholder="Sayfa Sayısı"}}<br/>
+    Basım Tarihi:{{input class="form-control" type="date" id="party-time"
+         name="party-time" value=model.basimTarihi
+         min="0000-00-00T00:00" max="2018-06-22T00:00" }}
+  </div><br/>
+  <strong>Yazar İsimleri</strong><br/>
+  <ul>
+    {{#each model.yazarAdi as |yazar|}}
+        <li>{{yazar.yazarAdi}}</li><br/>
+    {{/each}}
+  </ul>
+  <button {{action 'guncelle'}} class="btn btn-default">guncelle</button>
+
+</form>
+</div>
+
+ <div class="col-md-2"></div>
+{{outlet}}

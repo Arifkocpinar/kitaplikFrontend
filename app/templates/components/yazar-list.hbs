@@ -1,0 +1,7 @@
+{{yield}}
+ {{#each items as |item|}}
+      {{#yazar-list content=item label=item.yazarAdi  }}
+        <button {{action 'onRemove' item}}class="btn btn-danger">-</button>
+            {{/yazar-list}}
+  {{/each}}
+    {{label}}

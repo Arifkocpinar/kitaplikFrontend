@@ -1,0 +1,26 @@
+
+<div class="col-md-2"></div>
+ <div class="col-md-8">
+<form class="navbar-form navbar-left">
+  <div class="form-group">
+    <br/>
+    <br/>
+    {{input class="form-control" value=isbn placeholder="isbn"}}<br/>
+    {{input class="form-control" value=kadi placeholder="Kitap Adı"}}<br/>
+
+    {{input class="form-control" value=yadi0 placeholder="Yazar 1"}}<br/>
+    <button {{action 'add' item}}class="btn btn-info" >+</button>
+    {{yazar-list items=yazarlar onRemove='remove' onAdd='add'}}
+
+    {{input class="form-control" value=yevi placeholder="Yayın Evi"}}<br/>
+    {{input class="form-control" value=sayfa placeholder="Sayfa Sayısı"}}<br/>
+    {{input class="form-control" type="date" id="party-time"
+               name="party-time" value=tarih
+               min="0000-00-00" max="2018-06-14" }}
+  </div><br/>
+  <button {{action 'ekle'}} class="btn btn-default">Ekle</button>
+</form>
+</div>
+
+ <div class="col-md-2"></div>
+ {{outlet}}

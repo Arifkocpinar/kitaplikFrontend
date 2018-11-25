@@ -1,0 +1,10 @@
+{{yield}}
+
+ {{#each items.yazarAdi as |item|}}
+
+      {{#guncelle-yazar-list content=item label=item.yazarAdi  }}
+        <button {{action 'onRemove' item}}class="btn btn-danger">-</button>
+
+            {{/guncelle-yazar-list}}
+  {{/each}}
+{{label}}

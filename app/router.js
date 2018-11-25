@@ -7,6 +7,10 @@ const Router = EmberRouter.extend({
 });
 
 Router.map(function() {
+  this.route('ekle');
+  this.route('sil');
+  this.route('guncelle', { path: "guncelle/:id" });
+  this.route('kitap');
 });
 
 export default Router;
